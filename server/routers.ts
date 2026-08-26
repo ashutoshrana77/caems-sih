@@ -4,6 +4,11 @@ import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router } from "./_core/trpc";
 import { createPilotInterest } from "./db";
+import { askCAEMS } from "./googleAI";
+
+export const chatInput = z.object({
+  messages: z.array(z.object({ role: z.enum(["user", "assistant"]), content: z.string().trim().min(1).max(4000) })).min(1).max(12),
+});
 
 export const pilotInterestInput = z.object({
   name: z.string().trim().min(2).max(160),
@@ -26,6 +31,9 @@ export const appRouter = router({
       await createPilotInterest(input);
       return { success: true } as const;
     }),
+  }),
+  chatbot: router({
+    ask: publicProcedure.input(chatInput).mutation(async ({ input }) => ({ text: await askCAEMS(input.messages) })),
   }),
 });
 

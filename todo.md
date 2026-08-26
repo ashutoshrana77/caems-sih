@@ -13,3 +13,12 @@
 - [x] Manually verify the pilot form, live map simulator, language switcher, and SMS fallback, then save the full-stack checkpoint.
 
 - [x] Add a distinct visible SMS retrying state and save a checkpoint after final verification.
+
+- [x] Store the provided chatbot API key as a server-side project secret without exposing it to the browser.
+- [x] Add a validated server-side chatbot procedure with CAEMS emergency-response system instructions.
+- [x] Add Vitest coverage for chatbot input validation and response shaping.
+- [x] Add a responsive CAEMS AI assistant panel with suggested prompts, loading state, errors, and chat history.
+- [x] Verify the chatbot integration and save an updated checkpoint.
+
+- [x] Add a mocked Gemini response test covering chatbot text extraction and empty-provider errors.
+- [x] Manually verify the chatbot drawer and save a final checkpoint after the chatbot update.
