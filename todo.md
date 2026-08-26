@@ -1,10 +1,15 @@
-# Named CAEMS button update
+# CAEMS full-stack demo upgrade
 
-- [x] Make Talk to the Team open the pilot/contact form.
-- [x] Make Open the Drill Toolkit open drill choices with a selectable checklist state.
-- [x] Make Hold for SOS use a visible press-and-hold interaction with completion and cancel states.
-- [x] Make See How It Works scroll to the system flow.
-- [x] Make Explore the Command View open the Authority view and show the command dashboard.
-- [x] Make The System, Response Loop, and Build Notes scroll to their corresponding sections.
-- [x] Make Request Pilot open the pilot/contact form.
-- [x] Verify the named controls, run checks/build, and save a checkpoint.
+- [x] Upgrade the static project to full-stack web-db-user support.
+- [x] Add a pilot interest data model and public backend procedure for submissions.
+- [x] Connect the pilot form to the backend mutation with loading, success, and error states.
+- [x] Add a live simulated incident map with timed marker updates and clear status controls.
+- [x] Add language switching for the main demo UI with English, Hindi, and Marathi labels.
+- [x] Add an SMS fallback simulation with send/retry status behavior for offline alert delivery.
+- [x] Verify the upgraded flows, run checks/tests/build, and save a checkpoint.
+
+- [x] Expand language switching to readiness labels, checklist rows, SOS control, and key authority/demo labels.
+- [x] Add SMS fallback failed/retrying states with a user-triggered retry action.
+- [x] Manually verify the pilot form, live map simulator, language switcher, and SMS fallback, then save the full-stack checkpoint.
+
+- [x] Add a distinct visible SMS retrying state and save a checkpoint after final verification.
