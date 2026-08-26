@@ -1,7 +1,10 @@
-# SIH 2026 / NDD interaction update
+# Named CAEMS button update
 
-- [x] Replace SIH 2025 references with SIH 2026 / NDD across the visible website.
-- [x] Audit every visible button, including header, hero, mode switch, app actions, drill CTA, pilot CTA, modal close, and form submit.
-- [x] Give every audited control a clear action, section navigation behavior, state change, or demo submission result.
-- [x] Confirm no visible placeholder button remains without an interaction.
-- [x] Verify desktop and mobile behavior, run checks/build, and save an updated checkpoint.
+- [x] Make Talk to the Team open the pilot/contact form.
+- [x] Make Open the Drill Toolkit open drill choices with a selectable checklist state.
+- [x] Make Hold for SOS use a visible press-and-hold interaction with completion and cancel states.
+- [x] Make See How It Works scroll to the system flow.
+- [x] Make Explore the Command View open the Authority view and show the command dashboard.
+- [x] Make The System, Response Loop, and Build Notes scroll to their corresponding sections.
+- [x] Make Request Pilot open the pilot/contact form.
+- [x] Verify the named controls, run checks/build, and save a checkpoint.
