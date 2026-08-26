@@ -22,3 +22,14 @@
 
 - [x] Add a mocked Gemini response test covering chatbot text extraction and empty-provider errors.
 - [x] Manually verify the chatbot drawer and save a final checkpoint after the chatbot update.
+
+- [x] Replace the Build Notes content with a copyright and website content-use policy page section.
+- [x] Include ownership, permitted/prohibited use, UGC, DMCA/takedown, counter-notification, open-source licensing, attribution, and contact details.
+- [x] Update section labels and metadata so the policy page is discoverable and consistent with CAEMS SIH 2026 / NDD.
+- [x] Verify the policy section responsively and save a checkpoint.
+
+- [x] Add explicit designated copyright agent and DMCA-style notice submission method and requirements.
+- [x] Update page title and description metadata to identify the new copyright and content-use policy.
+- [x] Save a new checkpoint after the final policy verification.
+
+- [x] Save the final checkpoint after the copyright-policy update and responsive verification.
