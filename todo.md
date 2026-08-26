@@ -1,7 +1,7 @@
-# CAEMS interaction update
+# SIH 2026 / NDD interaction update
 
-- [x] Make primary CTAs open usable demo states instead of only showing passive notices.
-- [x] Make header navigation and hero actions scroll to the intended sections.
-- [x] Make citizen and authority view controls switch the operational demo.
-- [x] Add working demo interactions for safe route, SOS, drill toolkit, and pilot/contact actions.
-- [x] Verify interactions at desktop and mobile sizes and save an updated checkpoint.
+- [x] Replace SIH 2025 references with SIH 2026 / NDD across the visible website.
+- [x] Audit every visible button, including header, hero, mode switch, app actions, drill CTA, pilot CTA, modal close, and form submit.
+- [x] Give every audited control a clear action, section navigation behavior, state change, or demo submission result.
+- [x] Confirm no visible placeholder button remains without an interaction.
+- [x] Verify desktop and mobile behavior, run checks/build, and save an updated checkpoint.

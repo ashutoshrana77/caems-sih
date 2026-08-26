@@ -21,7 +21,7 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeMode, setActiveMode] = useState<"citizen" | "authority">("citizen");
   const [activeAction, setActiveAction] = useState<string | null>(null);
-  const runAction = (label: string) => { setActiveAction(label); toast(`${label} demo opened.`); };
+  const runAction = (label: string) => { setActiveAction(label); toast(`${label} demo opened.`); if (label === "Live demo") { setActiveMode("authority"); setTimeout(() => document.querySelector("#response")?.scrollIntoView({ behavior: "smooth" }), 0); } if (label === "Citizen app preview") { setActiveMode("citizen"); setTimeout(() => document.querySelector(".dashboard-section")?.scrollIntoView({ behavior: "smooth" }), 0); } };
 
   return (
     <div className="site-shell">
@@ -44,7 +44,7 @@ export default function Home() {
           <div className="hero-map" style={{ backgroundImage: `url(${heroMap})` }} />
           <div className="hero-overlay" />
           <div className="hero-content">
-            <div className="eyebrow"><span className="live-dot" /> SIH 2025 / HEALTH EMERGENCY TRACK</div>
+            <div className="eyebrow"><span className="live-dot" /> SIH 2026 / NDD · HEALTH EMERGENCY TRACK</div>
             <h1>When the warning lands,<br /><i>the response starts.</i></h1>
             <p className="hero-copy">CAEMS connects localized risk intelligence with the people who need to act—before, during, and after an emergency. Built for districts where every minute, megabyte, and volunteer counts.</p>
             <div className="hero-actions">
@@ -91,7 +91,7 @@ export default function Home() {
 
         <section className="final-cta"><div className="final-grid" /><div className="eyebrow"><span className="live-dot" /> COMMUNITY-AI / EMERGENCY MANAGEMENT</div><h2>Make the next<br /><i>minute count.</i></h2><p>CAEMS is a proposal for a more connected kind of readiness—one that starts with a signal and ends with people moving together.</p><button className="btn btn-orange" onClick={() => runAction("CAEMS pilot briefing")}>Talk to the team <ArrowUpRight size={17} /></button></section>
       </main>
-      <footer><a className="brand" href="#top"><img src={mark} alt="" className="brand-mark" /><span><b>CAEMS</b><em>SIH / CONCEPT PROPOSAL</em></span></a><span>Community-AI Emergency Management System</span><span>Built for resilient districts.</span></footer>
+      <footer><a className="brand" href="#top"><img src={mark} alt="" className="brand-mark" /><span><b>CAEMS</b><em>SIH 2026 / NDD</em></span></a><span>Community-AI Emergency Management System</span><span>Built for resilient districts.</span></footer>
       {activeAction && <div className="action-overlay" role="dialog" aria-modal="true" aria-label={activeAction} onClick={() => setActiveAction(null)}><div className="action-panel" onClick={(event) => event.stopPropagation()}><button className="close-action" onClick={() => setActiveAction(null)} aria-label="Close"><X size={18} /></button><div className="eyebrow"><span className="live-dot" /> CAEMS / DEMO ACTION</div><h3>{activeAction}</h3>{activeAction === "Pilot briefing" || activeAction === "CAEMS pilot briefing" ? <form onSubmit={(event) => { event.preventDefault(); toast("Thanks — your pilot interest has been recorded for this demo."); setActiveAction(null); }}><p>Tell us where you want to test the response loop. This demo keeps the interaction local and does not submit data to a live service.</p><label>Name<input required placeholder="Your name" /></label><label>District or organisation<input required placeholder="e.g. District health office" /></label><label>Email<input required type="email" placeholder="you@example.org" /></label><button className="btn btn-orange" type="submit">Send pilot interest <ArrowUpRight size={16} /></button></form> : <><p>{activeAction === "SOS flow" ? "SOS is ready in the citizen flow. In a production build, this would capture GPS, queue an offline packet, and fall back to SMS when needed." : activeAction === "Safe route" ? "The safe route preview highlights the nearest cached evacuation path and keeps the route available offline." : activeAction === "Drill toolkit" ? "The drill toolkit includes role-based checklists for schools, health centres, and community volunteers." : "This CAEMS interaction is staged as a clickable SIH demo and ready to connect to a live service."}</p><button className="btn btn-orange" onClick={() => setActiveAction(null)}>Close demo <Check size={16} /></button></>}</div></div>}
     </div>
   );
