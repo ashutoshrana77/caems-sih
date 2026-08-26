@@ -33,3 +33,12 @@
 - [x] Save a new checkpoint after the final policy verification.
 
 - [x] Save the final checkpoint after the copyright-policy update and responsive verification.
+
+- [x] Search site-facing source and metadata for Made with Manus watermark text or branding.
+- [x] Remove any user-facing watermark while preserving required runtime/application code. (No source watermark found; the visible badge is platform-injected.)
+- [x] Verify the clean preview, run checks/build, and save a checkpoint.
+
+- [x] Reproduce the Gemini failure and capture the actual server/API error.
+- [x] Fix the Gemini server request, model selection, or response parsing as needed.
+- [x] Improve the client error state so failures are visible and actionable.
+- [x] Verify a real chatbot prompt/response flow and save a repair checkpoint.
