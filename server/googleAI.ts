@@ -2,15 +2,13 @@ import { ENV } from "./_core/env";
 
 type ChatMessage = { role: "user" | "assistant"; content: string };
 
-const GEMINI_MODEL = "gemini-3.6-flash";
-
 export async function askCAEMS(messages: ChatMessage[]): Promise<string> {
   if (!ENV.googleAiStudioApiKey) throw new Error("Google AI Studio API key is not configured");
   const contents = messages.slice(-12).map((message) => ({
     role: message.role === "assistant" ? "model" : "user",
     parts: [{ text: message.content.slice(0, 4000) }],
   }));
-  const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${encodeURIComponent(ENV.googleAiStudioApiKey)}`, {
+  const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${encodeURIComponent(ENV.googleAiStudioApiKey)}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -19,12 +17,7 @@ export async function askCAEMS(messages: ChatMessage[]): Promise<string> {
       generationConfig: { temperature: 0.25, maxOutputTokens: 500 },
     }),
   });
-  if (!response.ok) {
-    const details = await response.text();
-    let providerMessage = "Unknown provider error";
-    try { providerMessage = (JSON.parse(details) as { error?: { message?: string } }).error?.message ?? providerMessage; } catch { /* keep the safe fallback */ }
-    throw new Error(`Gemini request failed with status ${response.status}: ${providerMessage}`);
-  }
+  if (!response.ok) throw new Error(`Gemini request failed with status ${response.status}`);
   const payload = await response.json() as { candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }> };
   const text = payload.candidates?.[0]?.content?.parts?.map((part) => part.text ?? "").join("").trim();
   if (!text) throw new Error("Gemini returned an empty response");
