@@ -42,3 +42,9 @@
 - [x] Fix the Gemini server request, model selection, or response parsing as needed.
 - [x] Improve the client error state so failures are visible and actionable.
 - [x] Verify a real chatbot prompt/response flow and save a repair checkpoint.
+
+- [ ] Rebuild the primary nav as a floating, rounded glassmorphism element with existing elevation language.
+- [ ] Add rAF-gated scroll-direction and idle detection with top-of-page visibility.
+- [ ] Keep the nav visible while keyboard focus is inside it and always visible under reduced-motion preferences.
+- [ ] Preserve or map the requested nav contents and working anchors/CTA behavior.
+- [ ] Verify desktop/mobile screenshots and checks before changing any other fixed elements.
