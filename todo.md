@@ -59,3 +59,13 @@
 
 - [x] Emulate prefers-reduced-motion and confirm the nav remains visible without hide/show animation. (Verified via live stylesheet inspection and top-state runtime check.)
 - [x] Save a checkpoint after reduced-motion verification of the refined glass nav.
+
+- [x] Reduce the floating nav height, padding, and logo scale so the banner has a smaller footprint.
+- [x] Center Features, Identity, Security, and Blog between the logo and Request Demo on desktop.
+- [x] Preserve a usable mobile menu and verify desktop/mobile screenshots plus build checks.
+
+- [x] Verify the compact mobile menu opens, closes, and keeps its links plus Request Demo action. tappable.
+- [x] Capture explicit mobile menu-open evidence and save the final compact-nav checkpoint.
+
+- [x] Verify the compact mobile menu open and close state explicitly after the final CSS pass.
+- [x] Capture evidence of the expanded menu controls and save a checkpoint after verification.
