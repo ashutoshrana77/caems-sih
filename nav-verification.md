@@ -1,0 +1,1 @@
+Desktop and mobile preview captures show the primary nav as a rounded frosted-glass bar inset from the viewport. A live browser check measured `transform: none` at the top, a negative Y transform after downward scrolling, and `transform: none` again after returning to the top and waiting for the 180ms idle timeout. The rest of the fixed elements were not modified in this pass.

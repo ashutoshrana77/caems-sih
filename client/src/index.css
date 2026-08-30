@@ -102,3 +102,63 @@ footer { background:#08191e; color:#829995; display:flex; align-items:center; ju
 @media (max-width:620px){.chatbot-launch{right:14px;bottom:14px;padding:11px 13px}.chatbot-launch span{display:none}.chatbot-drawer{right:14px;bottom:66px;width:calc(100vw - 28px)}}
 
 .policy-table { grid-template-columns: 1fr; gap: 0; }.policy-table > div { display:grid; grid-template-columns:minmax(120px,.35fr) 1fr; gap:18px; align-items:start; padding:17px 0; border-bottom:1px solid rgba(8,34,40,.16); }.policy-table > div:last-child { border-bottom:0; }.policy-table span { color:var(--orange); font:700 10px 'Space Grotesk'; letter-spacing:.08em; text-transform:uppercase; }.policy-table b { color:#19383d; font:500 13px/1.55 'Space Grotesk'; }.stack-section .stack-layout > div:first-child p { max-width:540px; } @media (max-width:680px){.policy-table > div { grid-template-columns:1fr; gap:7px; }.policy-table b { font-size:12px; }}
+
+/* Floating glass navigation: only the primary nav uses this treatment in this pass. */
+.topbar {
+  position: fixed;
+  top: 16px;
+  left: 5vw;
+  right: 5vw;
+  width: auto;
+  height: 60px;
+  padding: 0 20px 0 18px;
+  background: rgba(255, 255, 255, .68);
+  color: var(--ink);
+  border: 1px solid rgba(255, 255, 255, .46);
+  border-radius: 999px;
+  box-shadow: 0 20px 45px rgba(11, 32, 38, .14);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  transition: transform 240ms cubic-bezier(.23, 1, .32, 1);
+  z-index: 30;
+}
+.topbar.nav-hidden { transform: translateY(calc(-100% - 32px)); }
+.topbar.nav-hidden:focus-within { transform: translateY(0); }
+.topbar .brand b { color: var(--ink); }
+.topbar .brand em { color: #6c7c7d; }
+.topbar .nav-links { color: rgba(11, 32, 38, .7); }
+.topbar .nav-links a:hover { color: var(--ink); }
+.topbar .nav-cta { color: #fff; background: var(--ink); border-radius: 999px; }
+.topbar .nav-cta:hover { background: var(--teal); transform: translateY(-2px); }
+.topbar .menu-btn { color: var(--ink); }
+
+@media (max-width: 760px) {
+  .topbar {
+    top: 12px;
+    left: 14px;
+    right: 14px;
+    height: 58px;
+    padding: 0 15px;
+  }
+  .topbar .nav-links {
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, .46);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, .78);
+    box-shadow: 0 20px 45px rgba(11, 32, 38, .14);
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+  }
+  .topbar .nav-links a,
+  .topbar .nav-cta { color: var(--ink); }
+  .topbar .nav-cta { justify-content: center; background: var(--ink); color: #fff; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .topbar,
+  .topbar.nav-hidden,
+  .topbar.nav-hidden:focus-within { transform: none !important; transition: none !important; }
+}
