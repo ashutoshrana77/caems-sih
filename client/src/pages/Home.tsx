@@ -42,9 +42,9 @@ export default function Home() {
     let lastY = window.scrollY;
     let rafId: number | null = null;
     let stopTimer: number | null = null;
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     const updateVisibility = () => {
-      if (prefersReducedMotion || navFocused) {
+      if (reducedMotionQuery.matches || navFocused) {
         setNavHidden(false);
         return;
       }
@@ -56,6 +56,9 @@ export default function Home() {
       if (stopTimer) window.clearTimeout(stopTimer);
       stopTimer = window.setTimeout(() => setNavHidden(false), 180);
     };
+    const onMotionPreferenceChange = () => {
+      if (reducedMotionQuery.matches) setNavHidden(false);
+    };
     const onScroll = () => {
       if (rafId !== null) return;
       rafId = window.requestAnimationFrame(() => {
@@ -64,8 +67,10 @@ export default function Home() {
       });
     };
     window.addEventListener("scroll", onScroll, { passive: true });
+    reducedMotionQuery.addEventListener?.("change", onMotionPreferenceChange);
     return () => {
       window.removeEventListener("scroll", onScroll);
+      reducedMotionQuery.removeEventListener?.("change", onMotionPreferenceChange);
       if (rafId !== null) window.cancelAnimationFrame(rafId);
       if (stopTimer) window.clearTimeout(stopTimer);
     };

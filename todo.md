@@ -52,3 +52,10 @@
 - [x] Update the floating navbar labels to Features, Identity, Security, Blog, and Request Demo as requested.
 - [x] Map each requested nav label to a real CAEMS section target and keep the logo as a home anchor.
 - [x] Re-verify the updated labels and targets before the final navigation checkpoint.
+
+- [x] Compare the current floating nav against the supplied glassmorphism reference.
+- [x] Add richer layered glass depth, softer highlights, and smoother nav transition without changing other fixed elements.
+- [x] Verify desktop/mobile visual quality and reduced-motion behavior before checkpointing.
+
+- [x] Emulate prefers-reduced-motion and confirm the nav remains visible without hide/show animation. (Verified via live stylesheet inspection and top-state runtime check.)
+- [x] Save a checkpoint after reduced-motion verification of the refined glass nav.
